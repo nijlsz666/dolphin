@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: dolphin-stock-analysis
+  datasource:
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/dolphin_stock?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX_SIZE:10}
+      minimum-idle: ${DB_POOL_MIN_IDLE:2}
+      connection-timeout: ${DB_CONNECTION_TIMEOUT_MS:5000}
+      validation-timeout: ${DB_VALIDATION_TIMEOUT_MS:3000}
+      idle-timeout: ${DB_IDLE_TIMEOUT_MS:600000}
+      max-lifetime: ${DB_MAX_LIFETIME_MS:1500000}
+      keepalive-time: ${DB_KEEPALIVE_TIME_MS:120000}
+      initialization-fail-timeout: -1
+      connection-test-query: SELECT 1
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    com.dolphin.stock: INFO
+
+market-data:
+  realtime-enabled: ${REALTIME_QUOTES_ENABLED:true}
+  kline-endpoint: ${HISTORICAL_KLINE_ENDPOINT:https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=}
+  kline-timeout-seconds: ${HISTORICAL_KLINE_TIMEOUT_SECONDS:3}
+  kline-cache-seconds: ${HISTORICAL_KLINE_CACHE_SECONDS:300}
+  universe-cache-seconds: ${MARKET_UNIVERSE_CACHE_SECONDS:30}
+  indices-cache-seconds: ${MARKET_INDICES_CACHE_SECONDS:30}
+  dividend-endpoint: ${DIVIDEND_EVENTS_ENDPOINT:https://datacenter-web.eastmoney.com/api/data/v1/get}
+  timeout-seconds: ${REALTIME_QUOTES_TIMEOUT_SECONDS:8}
+
+news:
+  feed-urls: ${NEWS_FEED_URLS:https://finance.sina.com.cn/7x24/rollnews.xml,https://rss.sina.com.cn/finance/stock.xml}
