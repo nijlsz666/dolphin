@@ -4,6 +4,7 @@
 
 项目采用 Vue 3 + Ant Design Vue 构建前端，Spring Boot 提供 REST API，MySQL 保存行情、策略、分析快照和模拟交易数据。它适合作为个人研究工具、量化策略原型或全栈项目示例使用。
 <img width="2996" height="1388" alt="image" src="https://github.com/user-attachments/assets/df22cbb7-7c8b-4bfe-8a2c-31699f701b7d" />
+![Uploading image.png…]()
 
 > 当前项目仍处于 MVP 阶段。行情、新闻、公告和 AI 输出都可能存在延迟、缺失或错误，所有结果仅供研究和学习，不构成任何投资建议，也不会自动连接券商执行真实交易。
 
