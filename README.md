@@ -1,4 +1,4 @@
-# 葫芦神 · Dolphin Stock Analysis
+# 牛牛 · Dolphin Stock Analysis
 
 一个面向 A 股主板的股票池筛选、因子评分、AI 辅助分析和模拟交易工作台。
 
